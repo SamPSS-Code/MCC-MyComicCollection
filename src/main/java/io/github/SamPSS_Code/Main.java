@@ -28,40 +28,4 @@ public class Main {
         DriveScanner.scanFolderRecursively(driveService, selected.getId(), "");
     }
 
-    /*GeneralSecurityException, IOException {
-        try{
-            String comicsFolderId = "1DZ8dn8Gh3c1DlQ5N_0QQ6Epya7qPOLJR";
-            String query = "name = 'Comics' and mimeType = 'application/vnd.google-apps.folder' and trashed = false";
-
-            IO.println("Conecting to Google Drive...");
-
-            com.google.api.services.drive.Drive driveService = GoogleDriveManager.getDriveService();
-            com.google.api.services.drive.model.FileList result = driveService.files().list()
-                    .setQ(query)
-                    .setPageSize(30)
-                    .setFields("files(id, name, mimeType, size)")
-                    .execute();
-            java.util.List<com.google.api.services.drive.model.File> files = result.getFiles();
-            if (files == null){
-                IO.println("No comics folder were found in your Google Drive");
-            } else {
-                com.google.api.services.drive.model.File comicsFolder = files.get(0);
-                IO.println("Comics folder located! Real ID: " + comicsFolder.getId());
-
-                String contentQuery = String.format("'%s' in parents and trashed = false", comicsFolder.getId());
-                com.google.api.services.drive.model.FileList comicsList = driveService.files().list()
-                        .setQ(contentQuery)
-                        .setPageSize(30)
-                        .setFields("files(id, name, mimeType, size)")
-                        .execute();
-                IO.print("\nContent found inside Comics:\n");
-                for (com.google.api.services.drive.model.File file : comicsList.getFiles()) {
-                    IO.println("- " + file.getName());
-                }
-            }
-        } catch (Exception e) {
-            IO.println("Error while connecting to Google Drive: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }*/
 }

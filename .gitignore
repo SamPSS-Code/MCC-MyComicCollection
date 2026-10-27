@@ -40,11 +40,16 @@ build/
 
 **/credentials.json
 tokens/
+StoredCredential
 
 .agents/
 .gemini/
 .idea/
 idea.properties
+.mvn/
+mcc_database.db
 *.db
 *.db-journal
 *.sqlite
+.mcc/
+cache/

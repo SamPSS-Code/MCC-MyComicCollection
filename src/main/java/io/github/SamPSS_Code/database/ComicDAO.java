@@ -2,7 +2,6 @@ package io.github.SamPSS_Code.database;
 
 import io.github.SamPSS_Code.model.Comic;
 
-import javax.xml.crypto.Data;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -44,7 +43,7 @@ public class ComicDAO {
         }
     }
 
-    public List<Comic> getALL(){
+    public List<Comic> getAll(){
         List<Comic> comics = new ArrayList<>();
         String sql = "SELECT * FROM comics ORDER BY title ASC";
 
